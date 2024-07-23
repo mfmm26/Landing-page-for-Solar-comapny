@@ -1,0 +1,306 @@
+/* start global rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+:root {
+  --nav-background: #0b9586;
+  --text-color: #ffffff;
+  --dark-text: rgba(16, 24, 40, 1);
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* end global rules */
+
+/* start header */
+.header {
+  background-color: var(--nav-background);
+  color: var(--text-color);
+  padding: 20px 0;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo img {
+  width: 100px;
+  mix-blend-mode: multiply;
+}
+.header .nav-links {
+  z-index: 1000000;
+}
+.header .nav-links ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  z-index: 1000000;
+}
+.header .nav-links ul li a {
+  font-weight: 400;
+}
+.header .nav-links ul .active {
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.06);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+.header .nav-toggle {
+  display: none;
+}
+.header .nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.header .nav-toggle-label span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: var(--nav-background);
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+  .header .nav-links ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .header .nav-links ul li {
+    text-align: center;
+    margin: 10px 0;
+  }
+  .header .nav-toggle-label {
+    display: flex;
+  }
+  .header .nav-toggle:checked + .nav-toggle-label + .nav-links {
+    display: flex;
+  }
+}
+/* end header */
+
+/* start hero */
+.hero {
+  background: url("../images/Hero.png") no-repeat center center/cover;
+  width: 100%;
+  height: 100vh;
+  min-height: fit-content;
+}
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.hero .container .progress {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: var(--text-color);
+  margin: 30px 0;
+}
+.hero .container .progress .pro {
+  width: 20%;
+  height: 5px;
+  background-image: linear-gradient(to right, #fff, #333);
+  margin: 20px 30px;
+  position: relative;
+  z-index: 1;
+}
+.hero .container .progress .pro::after {
+  position: absolute;
+  content: "";
+  width: 35%;
+  height: 100%;
+  background-color: var(--text-color);
+}
+.hero .container .text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 50%;
+  color: var(--text-color);
+}
+.hero .container .text h1 {
+  font-weight: 600;
+  font-size: 52px;
+}
+.hero .container .text p {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+.hero .container .btn {
+  display: flex;
+  gap: 20px;
+}
+.hero .container .btn button {
+  padding: 12px 34px;
+  border: none;
+  border-radius: 109px;
+  background-color: var(--nav-background);
+  color: var(--text-color);
+  font-weight: 300;
+  cursor: pointer;
+}
+.hero .container .btn .right {
+  background-color: rgba(255, 187, 28, 1);
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .hero .container .text {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  .hero .container .text h1 {
+    font-size: 40px;
+  }
+  .hero .container .text p {
+    font-size: 18px;
+  }
+  .hero .container .btn {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero .container .btn button {
+    width: 100%;
+  }
+}
+/* end hero */
+
+/* start info section */
+section.info {
+  background-color: #f9f9f9;
+  width: 100%;
+  height: 100vh;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+section.info .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+
+  width: 100%;
+}
+section.info .container .text-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+}
+section.info .container .text-content .text-together {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+}
+section.info .container .text-content .text-together h2 {
+  font-weight: 600;
+  font-size: 42px;
+  color: var(--dark-text);
+}
+section.info .container .text-content .text-together p {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--dark-text);
+}
+section.info .container .text-content .single {
+  width: 100%;
+}
+section.info .container .text-content .single h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--dark-text);
+  margin: 10px 0;
+}
+section.info .container .text-content .single h3 span {
+  color: rgba(132, 189, 58, 1);
+  letter-spacing: 3px;
+}
+.info .container .image-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  section.info .container {
+    flex-direction: column;
+  }
+  section.info .container .text-content {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  section.info .container .text-content .text-together h2 {
+    font-size: 32px;
+  }
+  section.info .container .text-content .text-together p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 992px) {
+  section.info .container {
+    flex-direction: column;
+  }
+  section.info .container .text-content .text-together h2 {
+    font-size: 32px;
+  }
+  section.info .container .text-content .text-together p {
+    font-size: 18px;
+  }
+}
+/* end info section */
